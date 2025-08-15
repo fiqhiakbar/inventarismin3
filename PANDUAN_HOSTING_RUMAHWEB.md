@@ -181,10 +181,17 @@ server {
 - **Frontend**: `https://yourdomain.com`
 - **Admin Panel**: `https://yourdomain.com/login`
 
-### Default Login (jika ada):
-- **Username**: admin
-- **Password**: password
-- **Atau cek file seeder untuk kredensial default**
+### Default Login:
+- **Email**: `admin@mail.com`
+- **Password**: `secret`
+- **Role**: Administrator (Full access)
+
+### User Staff:
+- **Email**: `stafftu@mail.com`
+- **Password**: `secret`
+- **Role**: Staff TU (Akses terbatas)
+
+**⚠️ PENTING**: Ganti password default setelah login pertama kali!
 
 ## 📞 Troubleshooting
 
