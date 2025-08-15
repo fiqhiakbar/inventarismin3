@@ -1,0 +1,46 @@
+/* Icon Simple CSS - Inventaris Sekolahku */
+
+
+/* Basic icon styling */
+
+.card-icon {
+    position: absolute !important;
+    top: 18px !important;
+    right: 18px !important;
+    width: 42px !important;
+    height: 42px !important;
+    background: #667eea !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: white !important;
+    z-index: 100 !important;
+}
+
+
+/* Icon colors */
+
+.total .card-icon {
+    background: #667eea !important;
+}
+
+.good .card-icon {
+    background: #4facfe !important;
+}
+
+.warning .card-icon {
+    background: #fa709a !important;
+}
+
+.danger .card-icon {
+    background: #ff9a9e !important;
+}
+
+
+/* FontAwesome icon */
+
+.card-icon i {
+    color: white !important;
+    font-size: 18px !important;
+}

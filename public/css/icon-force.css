@@ -1,0 +1,75 @@
+/* Icon Force CSS - Inventaris Sekolahku */
+
+
+/* Force icon visibility */
+
+.stat-card .card-icon {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute !important;
+    top: 18px !important;
+    right: 18px !important;
+    width: 42px !important;
+    height: 42px !important;
+    background: #667eea !important;
+    border-radius: 50% !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 999 !important;
+}
+
+
+/* Force FontAwesome icon visibility */
+
+.stat-card .card-icon i {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: white !important;
+    font-size: 18px !important;
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
+}
+
+
+/* Specific icon colors */
+
+.stat-card.total .card-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.stat-card.good .card-icon {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
+}
+
+.stat-card.warning .card-icon {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%) !important;
+}
+
+.stat-card.danger .card-icon {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%) !important;
+}
+
+
+/* Ensure icon container is visible */
+
+.stat-card {
+    position: relative !important;
+    overflow: visible !important;
+}
+
+
+/* Mobile responsive */
+
+@media (max-width: 768px) {
+    .stat-card .card-icon {
+        top: 15px !important;
+        right: 15px !important;
+        width: 38px !important;
+        height: 38px !important;
+    }
+    .stat-card .card-icon i {
+        font-size: 16px !important;
+    }
+}

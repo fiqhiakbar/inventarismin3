@@ -1,0 +1,1082 @@
+/* CSS untuk tombol logout yang menarik */
+
+
+/* Tombol logout di sidebar */
+
+.btn-danger.logout {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 15px 20px !important;
+    font-weight: 600 !important;
+    color: white !important;
+    font-size: 14px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    margin: 20px 8px 20px 15px !important;
+    min-height: 50px !important;
+    transform: translateX(-7px) !important;
+}
+
+
+/* Efek hover yang menarik */
+
+.btn-danger.logout:hover {
+    background: linear-gradient(135deg, #c0392b 0%, #a93226 100%) !important;
+    transform: translateY(-3px) translateX(-7px) !important;
+    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4) !important;
+    color: white !important;
+}
+
+
+/* Efek active saat diklik */
+
+.btn-danger.logout:active {
+    transform: translateY(-1px) translateX(-7px) !important;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.5) !important;
+}
+
+
+/* Efek focus untuk accessibility */
+
+.btn-danger.logout:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.3) !important;
+}
+
+
+/* Icon dalam tombol */
+
+.btn-danger.logout i {
+    margin-right: 8px !important;
+    font-size: 16px !important;
+    transition: transform 0.3s ease !important;
+}
+
+
+/* Animasi icon saat hover */
+
+.btn-danger.logout:hover i {
+    transform: translateX(-3px) !important;
+}
+
+
+/* Efek glow yang menarik */
+
+.btn-danger.logout::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) !important;
+    transition: left 0.6s ease !important;
+}
+
+.btn-danger.logout:hover::before {
+    left: 100% !important;
+}
+
+
+/* Border gradient yang menarik */
+
+.btn-danger.logout::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    border-radius: 12px !important;
+    padding: 2px !important;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24, #ff6b6b) !important;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
+    -webkit-mask-composite: xor !important;
+    mask-composite: exclude !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+}
+
+.btn-danger.logout:hover::after {
+    opacity: 1 !important;
+}
+
+
+/* Tombol logout di dropdown navbar */
+
+.dropdown-item.btn-link.logout {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 10px 15px !important;
+    font-weight: 600 !important;
+    color: white !important;
+    font-size: 13px !important;
+    transition: all 0.3s ease !important;
+    margin: 5px 10px !important;
+    text-align: center !important;
+    min-width: 120px !important;
+}
+
+.dropdown-item.btn-link.logout:hover {
+    background: linear-gradient(135deg, #c0392b 0%, #a93226 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3) !important;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+
+/* Responsive design */
+
+@media (max-width: 768px) {
+    .btn-danger.logout {
+        margin: 15px 10px !important;
+        padding: 12px 15px !important;
+        font-size: 13px !important;
+        min-height: 45px !important;
+    }
+    .dropdown-item.btn-link.logout {
+        margin: 3px 5px !important;
+        padding: 8px 12px !important;
+        font-size: 12px !important;
+    }
+}
+
+
+/* Animasi loading untuk tombol */
+
+.btn-danger.logout.loading {
+    pointer-events: none !important;
+    opacity: 0.7 !important;
+}
+
+.btn-danger.logout.loading i {
+    animation: spin 1s linear infinite !important;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Efek ripple saat diklik */
+
+.btn-danger.logout {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.btn-danger.logout .ripple {
+    position: absolute !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.3) !important;
+    transform: scale(0) !important;
+    animation: ripple 0.6s linear !important;
+    pointer-events: none !important;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+
+/* Efek tambahan untuk tombol logout */
+
+.btn-danger.logout {
+    cursor: pointer !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+}
+
+
+/* Efek pulse untuk menarik perhatian */
+
+.btn-danger.logout {
+    animation: pulse-glow 2s infinite !important;
+}
+
+@keyframes pulse-glow {
+    0%,
+    100% {
+        box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3) !important;
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(231, 76, 60, 0.5) !important;
+    }
+}
+
+
+/* Efek hover yang lebih menarik */
+
+.btn-danger.logout:hover {
+    animation: none !important;
+}
+
+
+/* Efek untuk tombol di sidebar */
+
+.main-sidebar .btn-danger.logout {
+    position: sticky !important;
+    bottom: 20px !important;
+    z-index: 1000 !important;
+}
+
+
+/* Efek untuk tombol di dropdown */
+
+.dropdown-menu .btn-link.logout {
+    border-radius: 8px !important;
+    margin: 5px !important;
+    display: block !important;
+    width: calc(100% - 10px) !important;
+}
+
+
+/* Efek focus yang lebih baik */
+
+.btn-danger.logout:focus-visible {
+    outline: 2px solid #e74c3c !important;
+    outline-offset: 2px !important;
+}
+
+
+/* Efek disabled state */
+
+.btn-danger.logout:disabled {
+    opacity: 0.6 !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+}
+
+
+/* Efek untuk dark mode */
+
+@media (prefers-color-scheme: dark) {
+    .btn-danger.logout {
+        background: linear-gradient(135deg, #ff6b6b 0%, #e74c3c 100%) !important;
+    }
+    .btn-danger.logout:hover {
+        background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%) !important;
+    }
+}
+
+
+/* ===== FIX UNTUK SUB MENU PEMINJAMAN BARANG - SOLUSI OTOMATIS MINIMIZE ===== */
+
+
+/* Ketika sidebar dalam mode mini, sub menu harus tersembunyi */
+
+body.sidebar-mini .main-sidebar .sidebar-menu li ul.dropdown-menu {
+    display: none !important;
+    position: absolute !important;
+    background-color: #fff !important;
+    left: 65px !important;
+    top: 10px !important;
+    width: 200px !important;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 8px !important;
+    z-index: 9999 !important;
+    transition: all 0.3s ease !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-10px) !important;
+    pointer-events: none !important;
+}
+
+
+/* Hanya tampilkan sub menu saat hover pada mode mini */
+
+body.sidebar-mini .main-sidebar .sidebar-menu li:hover>ul.dropdown-menu {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+}
+
+
+/* Hover pada sub menu itu sendiri untuk mencegah minimize mendadak */
+
+body.sidebar-mini .main-sidebar .sidebar-menu li ul.dropdown-menu:hover {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+}
+
+
+/* Styling untuk sub menu items dalam mode mini */
+
+body.sidebar-mini .main-sidebar .sidebar-menu li ul.dropdown-menu li a {
+    height: 40px !important;
+    padding: 0 20px !important;
+    background-color: #fff !important;
+    color: #78828a !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+}
+
+body.sidebar-mini .main-sidebar .sidebar-menu li ul.dropdown-menu li a:hover {
+    background-color: #f8fafb !important;
+    color: #6777ef !important;
+}
+
+body.sidebar-mini .main-sidebar .sidebar-menu li ul.dropdown-menu li:last-child a {
+    border-bottom: none !important;
+}
+
+
+/* Pastikan sub menu tidak muncul di mode normal */
+
+body:not(.sidebar-mini) .main-sidebar .sidebar-menu li ul.dropdown-menu {
+    position: static !important;
+    width: 100% !important;
+    left: auto !important;
+    top: auto !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    pointer-events: auto !important;
+}
+
+
+/* Tambahkan arrow indicator untuk menu yang memiliki sub menu */
+
+body.sidebar-mini .main-sidebar .sidebar-menu li a.has-dropdown:after {
+    content: "▶" !important;
+    position: static !important;
+    margin-left: auto !important;
+    font-size: 7px !important;
+    color: #78828a !important;
+    transition: all 0.3s ease !important;
+    z-index: 1 !important;
+    opacity: 0.7 !important;
+    flex-shrink: 0 !important;
+}
+
+
+/* Arrow berubah saat hover */
+
+body.sidebar-mini .main-sidebar .sidebar-menu li:hover>a.has-dropdown:after {
+    color: #6777ef !important;
+    transform: rotate(90deg) !important;
+}
+
+
+/* Pastikan icon menu tidak bertabrakan dengan arrow indicator */
+
+body.sidebar-mini .main-sidebar .sidebar-menu li a.has-dropdown i {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    width: 18px !important;
+    text-align: center !important;
+    position: relative !important;
+    z-index: 2 !important;
+    flex-shrink: 0 !important;
+}
+
+
+/* Atur posisi icon agar berada di tengah */
+
+body.sidebar-mini .main-sidebar .sidebar-menu li a.has-dropdown {
+    justify-content: space-between !important;
+    position: relative !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding: 0 8px !important;
+    min-height: 45px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+
+/* Pastikan arrow indicator tidak menutupi icon */
+
+body.sidebar-mini .main-sidebar .sidebar-menu li a.has-dropdown:after {
+    pointer-events: none !important;
+    width: 10px !important;
+    height: 10px !important;
+    line-height: 10px !important;
+    text-align: center !important;
+}
+
+
+/* Pastikan sub menu muncul dengan posisi yang tepat */
+
+body.sidebar-mini .main-sidebar .sidebar-menu li ul.dropdown-menu {
+    margin-top: -5px !important;
+    border: 1px solid #e3eaef !important;
+}
+
+
+/* Hover effect yang lebih halus */
+
+body.sidebar-mini .main-sidebar .sidebar-menu li:hover>a.has-dropdown {
+    background-color: #f8fafb !important;
+    border-radius: 5px !important;
+}
+
+
+/* SOLUSI TAMBAHAN: Pastikan sub menu tidak mengganggu konten lain */
+
+body.sidebar-mini .main-sidebar .sidebar-menu li ul.dropdown-menu {
+    max-height: 300px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+
+/* Styling untuk scrollbar sub menu */
+
+body.sidebar-mini .main-sidebar .sidebar-menu li ul.dropdown-menu::-webkit-scrollbar {
+    width: 4px !important;
+}
+
+body.sidebar-mini .main-sidebar .sidebar-menu li ul.dropdown-menu::-webkit-scrollbar-track {
+    background: #f1f1f1 !important;
+    border-radius: 2px !important;
+}
+
+body.sidebar-mini .main-sidebar .sidebar-menu li ul.dropdown-menu::-webkit-scrollbar-thumb {
+    background: #c1c1c1 !important;
+    border-radius: 2px !important;
+}
+
+body.sidebar-mini .main-sidebar .sidebar-menu li ul.dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8 !important;
+}
+
+
+/* SOLUSI UTAMA: Auto-hide sub menu ketika cursor meninggalkan area */
+
+body.sidebar-mini .main-sidebar .sidebar-menu li:not(:hover)>ul.dropdown-menu {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-10px) !important;
+    pointer-events: none !important;
+}
+
+
+/* Pastikan sub menu benar-benar tersembunyi saat tidak hover */
+
+body.sidebar-mini .main-sidebar .sidebar-menu li ul.dropdown-menu:not(:hover) {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-10px) !important;
+    pointer-events: none !important;
+}
+
+
+/* ===== FIX UNTUK INPUT FORM PEMINJAMAN & PENGEMBALIAN ===== */
+
+
+/* Pastikan semua form input pada halaman peminjaman dan pengembalian terang dan dapat digunakan */
+
+
+/* Override untuk form input yang gelap - SOLUSI KUAT */
+
+.modal .form-control,
+.modal input[type="text"],
+.modal input[type="email"],
+.modal input[type="password"],
+.modal input[type="number"],
+.modal input[type="date"],
+.modal input[type="time"],
+.modal input[type="tel"],
+.modal input[type="url"],
+.modal textarea,
+.modal select {
+    background-color: #ffffff !important;
+    color: #495057 !important;
+    border: 1px solid #ced4da !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    cursor: text !important;
+    box-shadow: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    -moz-filter: none !important;
+    -ms-filter: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+}
+
+
+/* Focus state yang jelas */
+
+.modal .form-control:focus,
+.modal input[type="text"]:focus,
+.modal input[type="email"]:focus,
+.modal input[type="password"]:focus,
+.modal input[type="number"]:focus,
+.modal input[type="date"]:focus,
+.modal input[type="time"]:focus,
+.modal input[type="tel"]:focus,
+.modal input[type="url"]:focus,
+.modal textarea:focus,
+.modal select:focus {
+    background-color: #ffffff !important;
+    color: #495057 !important;
+    border-color: #6777ef !important;
+    box-shadow: 0 0 0 0.2rem rgba(103, 119, 239, 0.25) !important;
+    outline: none !important;
+}
+
+
+/* Hover state */
+
+.modal .form-control:hover,
+.modal input[type="text"]:hover,
+.modal input[type="email"]:hover,
+.modal input[type="password"]:hover,
+.modal input[type="number"]:hover,
+.modal input[type="date"]:hover,
+.modal input[type="time"]:hover,
+.modal input[type="tel"]:hover,
+.modal input[type="url"]:hover,
+.modal textarea:hover,
+.modal select:hover {
+    background-color: #ffffff !important;
+    border-color: #adb5bd !important;
+}
+
+
+/* Placeholder text yang jelas */
+
+.modal .form-control::placeholder,
+.modal input::placeholder,
+.modal textarea::placeholder {
+    color: #6c757d !important;
+    opacity: 1 !important;
+}
+
+
+/* Label yang jelas */
+
+.modal .form-group label,
+.modal label {
+    color: #495057 !important;
+    font-weight: 600 !important;
+    opacity: 1 !important;
+}
+
+
+/* Pastikan tidak ada CSS yang membuat input disabled */
+
+.modal .form-control:not([disabled]),
+.modal input:not([disabled]),
+.modal textarea:not([disabled]),
+.modal select:not([disabled]) {
+    background-color: #ffffff !important;
+    color: #495057 !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+
+/* Override untuk input yang mungkin terkena CSS global */
+
+.modal input[type="text"].form-control,
+.modal input[type="email"].form-control,
+.modal input[type="password"].form-control,
+.modal input[type="number"].form-control,
+.modal input[type="date"].form-control,
+.modal input[type="time"].form-control,
+.modal textarea.form-control,
+.modal select.form-control {
+    background-color: #ffffff !important;
+    color: #495057 !important;
+    border: 1px solid #ced4da !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+
+/* Khusus untuk halaman peminjaman dan pengembalian */
+
+#item_loan_create_modal .form-control,
+#item_loan_edit_modal .form-control,
+#excel_menu .form-control {
+    background-color: #ffffff !important;
+    color: #495057 !important;
+    border: 1px solid #ced4da !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    box-shadow: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    -moz-filter: none !important;
+    -ms-filter: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+}
+
+
+/* SOLUSI KUAT: Override semua CSS yang mungkin membuat input gelap */
+
+#item_loan_create_modal *,
+#item_loan_edit_modal *,
+#excel_menu * {
+    box-shadow: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    -moz-filter: none !important;
+    -ms-filter: none !important;
+}
+
+
+/* Pastikan input benar-benar terang dan dapat digunakan */
+
+#item_loan_create_modal input,
+#item_loan_create_modal textarea,
+#item_loan_create_modal select,
+#item_loan_edit_modal input,
+#item_loan_edit_modal textarea,
+#item_loan_edit_modal select,
+#excel_menu input,
+#excel_menu textarea,
+#excel_menu select {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #007bff !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    cursor: text !important;
+    box-shadow: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    -moz-filter: none !important;
+    -ms-filter: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    position: relative !important;
+    z-index: 9999 !important;
+}
+
+
+/* Pastikan modal backdrop tidak mengganggu */
+
+.modal-backdrop {
+    opacity: 0.5 !important;
+    display: none !important;
+}
+
+
+/* Z-index yang tepat untuk modal */
+
+.modal {
+    z-index: 999999 !important;
+}
+
+.modal-dialog {
+    z-index: 999999 !important;
+}
+
+
+/* SOLUSI KUAT: Hapus semua shadow dan efek gelap dari modal */
+
+.modal-content {
+    box-shadow: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    -moz-filter: none !important;
+    -ms-filter: none !important;
+    background: #ffffff !important;
+}
+
+.modal-body {
+    background: #ffffff !important;
+    box-shadow: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    -moz-filter: none !important;
+    -ms-filter: none !important;
+}
+
+
+/* Pastikan tidak ada CSS global yang mengganggu */
+
+body .modal *,
+html .modal * {
+    box-shadow: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    -moz-filter: none !important;
+    -ms-filter: none !important;
+}
+
+
+/* Override untuk semua input dalam modal - SOLUSI PALING KUAT */
+
+.modal input,
+.modal textarea,
+.modal select,
+.modal .form-control {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #007bff !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    cursor: text !important;
+    box-shadow: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    -moz-filter: none !important;
+    -ms-filter: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    position: relative !important;
+    z-index: 999999 !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+}
+
+
+/* SOLUSI TERAKHIR: Force override untuk semua elemen form */
+
+.modal form *,
+.modal .form-group *,
+.modal .input-group * {
+    box-shadow: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    -moz-filter: none !important;
+    -ms-filter: none !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+
+/* ===== FIX UNTUK BUG MODAL DATA BARANG ===== */
+
+
+/* Pastikan modal data barang berfungsi normal */
+
+#commodity_create_modal,
+#edit_commodity,
+#show_commodity,
+#commodity_import_modal {
+    z-index: 1050 !important;
+    position: fixed !important;
+}
+
+#commodity_create_modal .modal-dialog,
+#edit_commodity .modal-dialog,
+#show_commodity .modal-dialog,
+#commodity_import_modal .modal-dialog {
+    z-index: 1055 !important;
+    position: relative !important;
+}
+
+
+/* Pastikan tombol dalam modal data barang berfungsi */
+
+#commodity_create_modal .btn,
+#edit_commodity .btn,
+#show_commodity .btn,
+#commodity_import_modal .btn {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+
+/* Pastikan form dalam modal data barang berfungsi */
+
+#commodity_create_modal form,
+#edit_commodity form,
+#commodity_import_modal form {
+    pointer-events: auto !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+
+/* Pastikan input dalam modal data barang berfungsi */
+
+#commodity_create_modal input,
+#edit_commodity input,
+#commodity_import_modal input,
+#commodity_create_modal textarea,
+#edit_commodity textarea,
+#commodity_import_modal textarea,
+#commodity_create_modal select,
+#edit_commodity select,
+#commodity_import_modal select {
+    pointer-events: auto !important;
+    cursor: text !important;
+    position: relative !important;
+    z-index: 1 !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #ced4da !important;
+}
+
+
+/* Pastikan modal backdrop tidak mengganggu modal data barang */
+
+body:has(#commodity_create_modal.show) .modal-backdrop,
+body:has(#edit_commodity.show) .modal-backdrop,
+body:has(#show_commodity.show) .modal-backdrop,
+body:has(#commodity_import_modal.show) .modal-backdrop {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
+}
+
+
+/* Pastikan body tidak terkunci saat modal data barang terbuka */
+
+body:has(#commodity_create_modal.show),
+body:has(#edit_commodity.show),
+body:has(#show_commodity.show),
+body:has(#commodity_import_modal.show) {
+    overflow: auto !important;
+    padding-right: 0 !important;
+}
+
+
+/* Pastikan tidak ada CSS yang mengganggu event handling */
+
+#commodity_create_modal *,
+#edit_commodity *,
+#show_commodity *,
+#commodity_import_modal * {
+    pointer-events: auto !important;
+    position: relative !important;
+    z-index: auto !important;
+}
+
+
+/* Khusus untuk tombol close dan dismiss */
+
+#commodity_create_modal .close,
+#edit_commodity .close,
+#show_commodity .close,
+#commodity_import_modal .close,
+#commodity_create_modal .btn-secondary,
+#edit_commodity .btn-secondary,
+#show_commodity .btn-secondary,
+#commodity_import_modal .btn-secondary {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 999 !important;
+}
+
+
+/* SOLUSI KUAT: Pastikan tombol close berfungsi dengan sempurna */
+
+#commodity_create_modal .close,
+#edit_commodity .close,
+#show_commodity .close,
+#commodity_import_modal .close {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+    background: transparent !important;
+    border: none !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    color: #000 !important;
+    text-shadow: 0 1px 0 #fff !important;
+    opacity: 0.5 !important;
+    padding: 1rem !important;
+    margin: -1rem -1rem -1rem auto !important;
+}
+
+#commodity_create_modal .close:hover,
+#edit_commodity .close:hover,
+#show_commodity .close:hover,
+#commodity_import_modal .close:hover {
+    color: #000 !important;
+    text-decoration: none !important;
+    opacity: 0.75 !important;
+}
+
+
+/* SOLUSI KUAT: Pastikan tombol Tutup (btn-secondary) berfungsi */
+
+#commodity_create_modal .btn-secondary,
+#edit_commodity .btn-secondary,
+#show_commodity .btn-secondary,
+#commodity_import_modal .btn-secondary {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 999 !important;
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+    color: #ffffff !important;
+    padding: 0.375rem 0.75rem !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    border-radius: 0.25rem !important;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+}
+
+#commodity_create_modal .btn-secondary:hover,
+#edit_commodity .btn-secondary:hover,
+#show_commodity .btn-secondary:hover,
+#commodity_import_modal .btn-secondary:hover {
+    background-color: #5a6268 !important;
+    border-color: #545b62 !important;
+    color: #ffffff !important;
+}
+
+#commodity_create_modal .btn-secondary:focus,
+#edit_commodity .btn-secondary:focus,
+#show_commodity .btn-secondary:focus,
+#commodity_import_modal .btn-secondary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5) !important;
+    outline: none !important;
+}
+
+
+/* Pastikan modal data barang tidak terpengaruh CSS global */
+
+#commodity_create_modal,
+#edit_commodity,
+#show_commodity,
+#commodity_import_modal {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    -moz-filter: none !important;
+    -ms-filter: none !important;
+}
+
+
+/* SOLUSI KUAT: Pastikan modal dapat ditutup dengan sempurna */
+
+#commodity_create_modal.show,
+#edit_commodity.show,
+#show_commodity.show,
+#commodity_import_modal.show {
+    display: block !important;
+    z-index: 1050 !important;
+}
+
+#commodity_create_modal.hide,
+#edit_commodity.hide,
+#show_commodity.hide,
+#commodity_import_modal.hide {
+    display: none !important;
+}
+
+
+/* Pastikan modal header tidak mengganggu tombol close */
+
+#commodity_create_modal .modal-header,
+#edit_commodity .modal-header,
+#show_commodity .modal-header,
+#commodity_import_modal .modal-header {
+    position: relative !important;
+    z-index: 1 !important;
+    pointer-events: auto !important;
+}
+
+
+/* Pastikan modal footer tidak mengganggu tombol */
+
+#commodity_create_modal .modal-footer,
+#edit_commodity .modal-footer,
+#show_commodity .modal-footer,
+#commodity_import_modal .modal-footer {
+    position: relative !important;
+    z-index: 1 !important;
+    pointer-events: auto !important;
+    border-top: 1px solid #dee2e6 !important;
+    padding: 0.75rem !important;
+}
+
+
+/* SOLUSI TERAKHIR: Force enable semua event handling */
+
+#commodity_create_modal *,
+#edit_commodity *,
+#show_commodity *,
+#commodity_import_modal * {
+    pointer-events: auto !important;
+    position: relative !important;
+    z-index: auto !important;
+    user-select: auto !important;
+    -webkit-user-select: auto !important;
+    -moz-user-select: auto !important;
+    -ms-user-select: auto !important;
+}
+
+
+/* Pastikan tidak ada CSS yang disable event handling */
+
+#commodity_create_modal button,
+#edit_commodity button,
+#show_commodity button,
+#commodity_import_modal button {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 1 !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+}
+
+
+/* Pastikan tombol dalam modal data barang memiliki styling yang benar */
+
+#commodity_create_modal .btn-success,
+#edit_commodity .btn-success,
+#commodity_import_modal .btn-success {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+    color: #ffffff !important;
+}
+
+#commodity_create_modal .btn-secondary,
+#edit_commodity .btn-secondary,
+#commodity_import_modal .btn-secondary {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+    color: #ffffff !important;
+}

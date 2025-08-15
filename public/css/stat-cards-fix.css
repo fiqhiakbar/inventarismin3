@@ -1,0 +1,129 @@
+/* Stat Cards Fix CSS - Inventaris Sekolahku */
+
+
+/* Memastikan angka-angka terlihat jelas */
+
+.stat-card .card-body {
+    position: relative !important;
+    z-index: 10 !important;
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+}
+
+
+/* Memastikan judul terlihat jelas */
+
+.stat-card .card-header h4 {
+    position: relative !important;
+    z-index: 10 !important;
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 0 8px 0 !important;
+    line-height: 1.2 !important;
+}
+
+
+/* Icon tetap untuk setiap card */
+
+.stat-card .card-icon {
+    position: absolute !important;
+    top: 18px !important;
+    right: 18px !important;
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 16px !important;
+    z-index: 5 !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: white !important;
+}
+
+
+/* Icon untuk TOTAL BARANG */
+
+.stat-card.total .card-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+
+/* Icon untuk KONDISI BAIK */
+
+.stat-card.good .card-icon {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
+}
+
+
+/* Icon untuk RUSAK RINGAN */
+
+.stat-card.warning .card-icon {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%) !important;
+}
+
+
+/* Icon untuk RUSAK BERAT */
+
+.stat-card.danger .card-icon {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%) !important;
+}
+
+
+/* Memastikan card wrap memiliki spacing yang tepat */
+
+.stat-card .card-wrap {
+    padding: 18px 20px !important;
+    padding-top: 12px !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    background: white !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+
+/* Spacing khusus untuk mobile */
+
+@media (max-width: 768px) {
+    .stat-card .card-wrap {
+        padding: 15px 18px !important;
+        padding-top: 10px !important;
+    }
+    .stat-card .card-icon {
+        top: 15px !important;
+        right: 15px !important;
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 14px !important;
+    }
+    .stat-card .card-body {
+        font-size: 24px !important;
+        line-height: 1.1 !important;
+    }
+    .stat-card .card-header h4 {
+        font-size: 12px !important;
+        line-height: 1.1 !important;
+        margin-bottom: 6px !important;
+    }
+}
+
+
+/* Memastikan tidak ada overlap */
+
+.stat-card * {
+    box-sizing: border-box !important;
+}
+
+
+/* Force visibility */
+
+.stat-card .card-body,
+.stat-card .card-header h4 {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+}

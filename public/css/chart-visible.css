@@ -1,0 +1,52 @@
+/* Chart Visibility CSS - Inventaris Sekolahku */
+
+
+/* Ensure charts are visible */
+
+.chart-card .card-body canvas,
+.chart-card .card-body div[id*="chart"],
+.chart-card .card-body .apexcharts-canvas {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background: white !important;
+}
+
+
+/* Fix ApexCharts text */
+
+.apexcharts-title-text {
+    fill: #2c3e50 !important;
+    font-weight: 600 !important;
+}
+
+.apexcharts-text {
+    fill: #6c757d !important;
+}
+
+.apexcharts-canvas {
+    background: white !important;
+}
+
+
+/* Ensure proper chart container */
+
+.chart-container {
+    min-height: 300px !important;
+    background: white !important;
+}
+
+
+/* Fix for any hidden chart elements */
+
+[style*="display: none"] {
+    display: block !important;
+}
+
+[style*="visibility: hidden"] {
+    visibility: visible !important;
+}
+
+[style*="opacity: 0"] {
+    opacity: 1 !important;
+}

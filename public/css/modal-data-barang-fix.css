@@ -1,0 +1,325 @@
+/* ===== FIX UNTUK BUG MODAL DATA BARANG ===== */
+
+
+/* SOLUSI AMAN: Hanya untuk modal data barang, tidak mengganggu menu lain */
+
+
+/* Pastikan modal data barang berfungsi */
+
+#commodity_create_modal,
+#edit_commodity,
+#show_commodity,
+#commodity_import_modal {
+    z-index: 1050 !important;
+}
+
+
+/* Pastikan modal dialog berfungsi */
+
+#commodity_create_modal .modal-dialog,
+#edit_commodity .modal-dialog,
+#show_commodity .modal-dialog,
+#commodity_import_modal .modal-dialog {
+    z-index: 1055 !important;
+}
+
+
+/* SOLUSI UTAMA: Pastikan tombol close berfungsi */
+
+#commodity_create_modal .close,
+#edit_commodity .close,
+#show_commodity .close,
+#commodity_import_modal .close {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    z-index: 9999 !important;
+}
+
+
+/* SOLUSI UTAMA: Pastikan tombol Tutup berfungsi */
+
+#commodity_create_modal .btn-secondary,
+#edit_commodity .btn-secondary,
+#show_commodity .btn-secondary,
+#commodity_import_modal .btn-secondary {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    z-index: 999 !important;
+}
+
+
+/* Pastikan tombol dalam modal data barang berfungsi */
+
+#commodity_create_modal .btn,
+#edit_commodity .btn,
+#show_commodity .btn,
+#commodity_import_modal .btn {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+
+/* Pastikan form dan input dalam modal data barang berfungsi */
+
+#commodity_create_modal form,
+#edit_commodity form,
+#commodity_import_modal form,
+#commodity_create_modal input,
+#edit_commodity input,
+#commodity_import_modal input,
+#commodity_create_modal textarea,
+#edit_commodity textarea,
+#commodity_import_modal textarea,
+#commodity_create_modal select,
+#edit_commodity select,
+#commodity_import_modal select {
+    pointer-events: auto !important;
+}
+
+
+/* SOLUSI TERAKHIR: Hanya untuk elemen dalam modal data barang */
+
+#commodity_create_modal *,
+#edit_commodity *,
+#show_commodity *,
+#commodity_import_modal * {
+    pointer-events: auto !important;
+}
+
+
+/* ===== STYLING KONSISTEN UNTUK SEMUA MODAL ===== */
+
+
+/* Modal Header yang Rapi - UNTUK SEMUA MODAL */
+
+.modal-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border-bottom: none !important;
+    border-radius: 8px 8px 0 0 !important;
+    padding: 1.5rem !important;
+}
+
+.modal-title {
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    color: white !important;
+}
+
+
+/* Tombol Close (X) yang Rapi - UNTUK SEMUA MODAL */
+
+.modal .close {
+    color: white !important;
+    opacity: 0.8 !important;
+    font-size: 1.5rem !important;
+    font-weight: 300 !important;
+    text-shadow: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.modal .close:hover {
+    color: white !important;
+    opacity: 1 !important;
+    transform: scale(1.1) !important;
+}
+
+
+/* Modal Body yang Rapi - UNTUK SEMUA MODAL */
+
+.modal-body {
+    padding: 2rem !important;
+    background: #f8f9fa !important;
+}
+
+
+/* Form Group yang Rapi - UNTUK SEMUA MODAL */
+
+.form-group {
+    margin-bottom: 1.5rem !important;
+}
+
+
+/* Label yang Rapi - UNTUK SEMUA MODAL */
+
+.modal label {
+    font-weight: 600 !important;
+    color: #495057 !important;
+    margin-bottom: 0.5rem !important;
+    font-size: 0.9rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+
+/* Input yang Konsisten dan Rapi - UNTUK SEMUA MODAL */
+
+.modal .form-control,
+.modal input,
+.modal textarea,
+.modal select {
+    border: 2px solid #e9ecef !important;
+    border-radius: 8px !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 0.95rem !important;
+    transition: all 0.3s ease !important;
+    background: white !important;
+    color: #495057 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+
+/* Input Focus State - UNTUK SEMUA MODAL */
+
+.modal .form-control:focus,
+.modal input:focus,
+.modal textarea:focus,
+.modal select:focus {
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25) !important;
+    outline: none !important;
+    transform: translateY(-2px) !important;
+}
+
+
+/* Input Hover State - UNTUK SEMUA MODAL */
+
+.modal .form-control:hover,
+.modal input:hover,
+.modal textarea:hover,
+.modal select:hover {
+    border-color: #adb5bd !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+/* Modal Footer yang Rapi - UNTUK SEMUA MODAL */
+
+.modal-footer {
+    background: white !important;
+    border-top: 1px solid #e9ecef !important;
+    border-radius: 0 0 8px 8px !important;
+    padding: 1.5rem !important;
+    justify-content: flex-end !important;
+    gap: 0.75rem !important;
+}
+
+
+/* Tombol yang Konsisten dan Rapi - UNTUK SEMUA MODAL */
+
+.modal .btn {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    min-width: 120px !important;
+}
+
+
+/* Tombol Primary (Simpan/Update) - UNTUK SEMUA MODAL */
+
+.modal .btn-primary,
+.modal .btn-success {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4) !important;
+}
+
+.modal .btn-primary:hover,
+.modal .btn-success:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6) !important;
+}
+
+
+/* Tombol Secondary (Tutup/Batal) - UNTUK SEMUA MODAL */
+
+.modal .btn-secondary {
+    background: #6c757d !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.4) !important;
+}
+
+.modal .btn-secondary:hover {
+    background: #5a6268 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(108, 117, 125, 0.6) !important;
+}
+
+
+/* Tombol Danger (Hapus) - UNTUK SEMUA MODAL */
+
+.modal .btn-danger {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%) !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4) !important;
+}
+
+.modal .btn-danger:hover {
+    background: #c82333 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.6) !important;
+}
+
+
+/* Input Group yang Rapi - UNTUK SEMUA MODAL */
+
+.modal .input-group {
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+.modal .input-group-text {
+    background: #f8f9fa !important;
+    border: 2px solid #e9ecef !important;
+    border-right: none !important;
+    color: #6c757d !important;
+    font-weight: 600 !important;
+}
+
+
+/* Checkbox dan Radio yang Rapi - UNTUK SEMUA MODAL */
+
+.modal input[type="checkbox"],
+.modal input[type="radio"] {
+    width: 18px !important;
+    height: 18px !important;
+    margin-right: 0.5rem !important;
+    accent-color: #667eea !important;
+}
+
+
+/* File Input yang Rapi - UNTUK SEMUA MODAL */
+
+.modal input[type="file"] {
+    padding: 0.5rem !important;
+    border: 2px dashed #e9ecef !important;
+    background: #f8f9fa !important;
+    text-align: center !important;
+}
+
+.modal input[type="file"]:hover {
+    border-color: #667eea !important;
+    background: #f0f2ff !important;
+}
+
+
+/* Responsive Design - UNTUK SEMUA MODAL */
+
+@media (max-width: 768px) {
+    .modal-body {
+        padding: 1rem !important;
+    }
+    .modal-footer {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+    }
+    .modal .btn {
+        width: 100% !important;
+        min-width: auto !important;
+    }
+}

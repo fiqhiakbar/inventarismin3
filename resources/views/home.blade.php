@@ -1,0 +1,165 @@
+<x-layout>
+	<x-slot name="title">Dashboard</x-slot>
+	<x-slot name="page_heading">Dashboard</x-slot>
+
+	<!-- Modern Statistic Cards -->
+	<div class="row">
+		<div class="col-lg-3 col-md-6 col-sm-6 col-12">
+			<div class="card stat-card total">
+				<div class="card-icon">
+					<i class="fas fa-boxes-stacked"></i>
+				</div>
+				<div class="card-wrap">
+					<div class="card-header">
+						<h4>Total Barang</h4>
+					</div>
+					<div class="card-body">
+						{{ $commodity_counts['commodity_in_total'] }}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-6 col-sm-6 col-12">
+			<div class="card stat-card good">
+				<div class="card-icon">
+					<i class="fas fa-check-circle"></i>
+				</div>
+				<div class="card-wrap">
+					<div class="card-header">
+						<h4>Kondisi Baik</h4>
+					</div>
+					<div class="card-body">
+						{{ $commodity_counts['commodity_in_good_condition'] }}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-6 col-sm-6 col-12">
+			<div class="card stat-card warning">
+				<div class="card-icon">
+					<i class="fas fa-exclamation-triangle"></i>
+				</div>
+				<div class="card-wrap">
+					<div class="card-header">
+						<h4>Rusak Ringan</h4>
+					</div>
+					<div class="card-body">
+						{{ $commodity_counts['commodity_in_not_good_condition'] }}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-6 col-sm-6 col-12">
+			<div class="card stat-card danger">
+				<div class="card-icon">
+					<i class="fas fa-times-circle"></i>
+				</div>
+				<div class="card-wrap">
+					<div class="card-header">
+						<h4>Rusak Berat</h4>
+					</div>
+					<div class="card-body">
+						{{ $commodity_counts['commodity_in_heavily_damage_condition'] }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-lg-8">
+			<div class="card chart-card">
+				<x-bar-chart chartTitle="Grafik Barang Berdasarkan Kondisi" chartID="chartCommodityCondition"
+					:series="$charts['commodity_condition_count']['series']"
+					:categories="$charts['commodity_condition_count']['categories']" :colors="['#47C363', '#FFA426', '#FC544B']">
+				</x-bar-chart>
+			</div>
+		</div>
+
+		<div class="col-md-6 col-lg-4">
+			<div class="card top-items-card">
+				<div class="card-header">
+					<h4>5 Barang Termahal</h4>
+				</div>
+				<div class="card-body">
+					@foreach($commodity_order_by_price as $key => $order_by_price)
+					<ul class="list-unstyled list-unstyled-border">
+						<li class="media">
+							<div class="media-body">
+								@can('detail barang')
+								<button data-id="{{ $order_by_price->id }}" class="float-right btn btn-info btn-sm show-modal"
+									data-toggle="modal" data-target="#show_commodity">Detail</button>
+								@endcan
+								<div class="media-title">{{ $order_by_price->name }}</div>
+								<span class="text-small text-muted">Harga: Rp{{
+									$order_by_price->indonesian_currency($order_by_price->price) }}</span>
+							</div>
+						</li>
+					</ul>
+					@endforeach
+					@can('lihat barang')
+					<div class="text-center pt-1 pb-1">
+						<a href="{{ route('barang.index') }}" class="btn btn-modern btn-primary-modern">
+							Lihat Semua Barang
+						</a>
+					</div>
+					@endcan
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-7">
+			<div class="card chart-card">
+				<x-bar-chart chartTitle="Grafik Jumlah Barang Berdasarkan Tahun Pembelian" chartID="chartCommodityCountEachYear"
+					:series="$charts['commodity_each_year_of_purchase_count']['series']"
+					:categories="$charts['commodity_each_year_of_purchase_count']['categories']">
+				</x-bar-chart>
+			</div>
+		</div>
+		<div class="col-lg-5">
+			<div class="card chart-card">
+				<x-pie-chart chartTitle="Grafik Jumlah Barang Berdasarkan BOS"
+					chartID="chartCommodityBySchoolOperationalAsistanceCount"
+					:series="$charts['commodity_by_school_operational_assistance_count']['series']"
+					:categories="$charts['commodity_by_school_operational_assistance_count']['categories']"></x-pie-chart>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="card chart-card">
+				<x-pie-chart chartTitle="Grafik Jumlah Barang Berdasarkan Material" chartID="chartCommodityByMaterial"
+					:series="$charts['commodity_by_material_count']['series']"
+					:categories="$charts['commodity_by_material_count']['categories']"></x-pie-chart>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="card chart-card">
+				<x-pie-chart chartTitle="Grafik Jumlah Barang Berdasarkan Merk" chartID="chartCommodityByBrand"
+					:series="$charts['commodity_by_brand_count']['series']"
+					:categories="$charts['commodity_by_brand_count']['categories']"></x-pie-chart>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="card chart-card">
+				<x-bar-chart chartTitle="Grafik Jumlah Barang Berdasarkan Ruangan" chartID="chartCommodityCountEachLocation"
+					:series="$charts['commodity_each_location_count']['series']"
+					:categories="$charts['commodity_each_location_count']['categories']">
+				</x-bar-chart>
+			</div>
+		</div>
+	</div>
+
+	@push('modal')
+	@include('commodities.modal.show')
+	@endpush
+
+	@push('js')
+	@include('_script');
+	@endpush
+</x-layout>

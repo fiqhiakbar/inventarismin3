@@ -1,0 +1,240 @@
+/* CSS Modal Konsisten untuk Semua Modal */
+
+
+/* Override semua modal header agar konsisten */
+
+.modal-header {
+    background: linear-gradient(135deg, #6777ef 0%, #764ba2 100%) !important;
+    color: white !important;
+    border-bottom: none !important;
+    padding: 25px !important;
+    padding-bottom: 5px !important;
+    border-radius: 3px 3px 0 0 !important;
+}
+
+.modal-header h5 {
+    font-size: 18px !important;
+    color: white !important;
+    margin-bottom: 0 !important;
+    font-weight: 600 !important;
+}
+
+.modal-header .close {
+    color: white !important;
+    opacity: 0.8 !important;
+    text-shadow: none !important;
+    margin: -25px -25px -25px auto !important;
+    padding: 25px !important;
+    font-size: 1.5rem !important;
+}
+
+.modal-header .close:hover {
+    opacity: 1 !important;
+    color: white !important;
+    transform: rotate(90deg) !important;
+    transition: all 0.3s ease !important;
+}
+
+
+/* Modal Content - Shadow dan border yang konsisten */
+
+.modal-content {
+    border: none !important;
+    border-radius: 3px !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05) !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+.modal.show .modal-content {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+
+/* Modal Body - Padding yang konsisten */
+
+.modal-body {
+    padding: 25px !important;
+    padding-top: 15px !important;
+}
+
+
+/* Modal Footer - Styling yang konsisten */
+
+.modal-footer {
+    border-top: none !important;
+    border-radius: 0 0 3px 3px !important;
+    padding: 25px !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    background: #f8f9fa !important;
+}
+
+
+/* Form styling yang konsisten */
+
+.modal .form-group label {
+    font-weight: 600 !important;
+    color: #495057 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.modal .form-control {
+    border-radius: 3px !important;
+    border: 1px solid #d1d5db !important;
+    padding: 0.75rem 1rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.modal .form-control:focus {
+    border-color: #6777ef !important;
+    box-shadow: 0 0 0 0.2rem rgba(103, 119, 239, 0.15) !important;
+    transform: translateY(-1px) !important;
+}
+
+
+/* Button styling yang konsisten */
+
+.modal-footer .btn {
+    border-radius: 3px !important;
+    font-weight: 600 !important;
+    padding: 0.75rem 1.5rem !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+}
+
+.modal-footer .btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+
+/* Force override untuk semua modal */
+
+.modal:not(.modal-progress) .modal-header {
+    background: linear-gradient(135deg, #6777ef 0%, #764ba2 100%) !important;
+    color: white !important;
+}
+
+
+/* Pastikan tidak ada konflik dengan CSS lama */
+
+.modal-header.bg-dark {
+    background: linear-gradient(135deg, #6777ef 0%, #764ba2 100%) !important;
+}
+
+
+/* Animasi modal yang smooth */
+
+.modal.fade .modal-dialog {
+    transform: scale(0.8) translateY(-50px) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.modal.show .modal-dialog {
+    transform: scale(1) translateY(0) !important;
+}
+
+
+/* SOLUSI KUAT: Hapus semua backdrop dan shadow yang mengganggu */
+
+.modal-backdrop {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
+}
+
+.modal-backdrop.show {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
+}
+
+
+/* SOLUSI KUAT: Pastikan modal berada di atas semua */
+
+.modal {
+    z-index: 999999 !important;
+    position: fixed !important;
+}
+
+.modal-dialog {
+    z-index: 999999 !important;
+    position: relative !important;
+}
+
+.modal-content {
+    z-index: 999999 !important;
+    position: relative !important;
+}
+
+
+/* SOLUSI KUAT: Hapus semua shadow yang mengganggu */
+
+.modal-content::before,
+.modal-content::after {
+    display: none !important;
+}
+
+
+/* SOLUSI KUAT: Pastikan semua elemen dalam modal bisa diakses */
+
+.modal * {
+    position: relative !important;
+    z-index: 999999 !important;
+}
+
+
+/* SOLUSI KUAT: Override untuk modal peminjaman khusus */
+
+#item_loan_create_modal,
+#item_loan_edit_modal,
+#excel_menu {
+    z-index: 999999 !important;
+    position: fixed !important;
+}
+
+#item_loan_create_modal .modal-dialog,
+#item_loan_edit_modal .modal-dialog,
+#excel_menu .modal-dialog {
+    z-index: 999999 !important;
+    position: relative !important;
+}
+
+#item_loan_create_modal .modal-content,
+#item_loan_edit_modal .modal-content,
+#excel_menu .modal-content {
+    z-index: 999999 !important;
+    position: relative !important;
+}
+
+
+/* SOLUSI KUAT: Hapus semua backdrop yang mengganggu */
+
+body.modal-open .modal-backdrop {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+
+/* SOLUSI KUAT: Force modal berada di atas semua */
+
+body .modal.show {
+    z-index: 999999 !important;
+    position: fixed !important;
+}
+
+
+/* SOLUSI KUAT: Hapus semua shadow dari body saat modal terbuka */
+
+body.modal-open {
+    overflow: hidden !important;
+}
+
+body.modal-open::before,
+body.modal-open::after {
+    display: none !important;
+}

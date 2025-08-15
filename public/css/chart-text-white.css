@@ -1,0 +1,66 @@
+/* Chart Text White CSS - Inventaris Sekolahku */
+
+
+/* Hanya untuk pie chart - angka persentase berwarna putih */
+
+.apexcharts-pie-label text,
+.apexcharts-pie-label tspan {
+    fill: white !important;
+    color: white !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+}
+
+
+/* Data labels pada pie chart */
+
+.apexcharts-datalabel-label,
+.apexcharts-datalabel-value {
+    fill: white !important;
+    color: white !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+}
+
+
+/* Pie chart series text */
+
+.apexcharts-pie-series text {
+    fill: white !important;
+    color: white !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+}
+
+
+/* Memastikan legend text tetap berwarna gelap untuk kontras */
+
+.apexcharts-legend-text {
+    fill: #2c3e50 !important;
+    color: #2c3e50 !important;
+}
+
+
+/* Chart title tetap berwarna normal */
+
+.apexcharts-title-text {
+    fill: #2c3e50 !important;
+    color: #2c3e50 !important;
+}
+
+
+/* Axis labels tetap berwarna gelap */
+
+.apexcharts-xaxis-label,
+.apexcharts-yaxis-label {
+    fill: #2c3e50 !important;
+    color: #2c3e50 !important;
+}
+
+
+/* Bar chart labels tetap berwarna normal */
+
+.apexcharts-bar-area+text {
+    fill: #2c3e50 !important;
+    color: #2c3e50 !important;
+}
