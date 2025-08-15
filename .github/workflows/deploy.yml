@@ -1,4 +1,4 @@
-name: Deploy to RumahWeb (FTP)
+name: Deploy to RumahWeb
 
 on:
   push:
@@ -16,21 +16,14 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: '8.1'
-        extensions: mbstring, xml, ctype, iconv, intl, pdo_mysql, dom, filter, gd, iconv, json, mbstring, pdo, phar, tokenizer, xml, zip
+        extensions: mbstring, xml, ctype, iconv, intl, pdo_mysql, dom, filter, gd, json, pdo, phar, tokenizer, zip
         
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --no-dev
-      
-    - name: Build assets
-      run: |
-        npm ci
-        npm run production
-      env:
-        NODE_ENV: production
         
-    - name: Create deployment package
+    - name: Clean up files
       run: |
-        # Exclude unnecessary files
+        # Remove unnecessary files for deployment
         rm -rf .git
         rm -rf node_modules
         rm -rf tests
