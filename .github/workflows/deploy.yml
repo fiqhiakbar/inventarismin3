@@ -1,4 +1,4 @@
-name: Deploy to RumahWeb (FTP Only)
+name: Deploy to RumahWeb (FTP)
 
 on:
   push:
@@ -56,9 +56,7 @@ jobs:
         rm -f PANDUAN_GITHUB_RUMAHWEB.md
         rm -f RINGKASAN_GITHUB_RUMAHWEB.md
         rm -f KREDENSIAL_LOGIN_DEFAULT.md
-        
-        # Create deployment package
-        zip -r deployment-package.zip . -x "*.git*" "node_modules/*" "tests/*" ".github/*" ".vscode/*"
+        rm -f PANDUAN_DEPLOYMENT_TANPA_SSH.md
         
     - name: Deploy to RumahWeb via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -95,6 +93,7 @@ jobs:
           **/PANDUAN_GITHUB_RUMAHWEB.md
           **/RINGKASAN_GITHUB_RUMAHWEB.md
           **/KREDENSIAL_LOGIN_DEFAULT.md
+          **/PANDUAN_DEPLOYMENT_TANPA_SSH.md
           
     - name: Post-deployment instructions
       run: |
