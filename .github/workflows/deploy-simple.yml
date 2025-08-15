@@ -1,0 +1,61 @@
+name: Deploy to RumahWeb (Simple)
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'
+        extensions: mbstring, xml, ctype, iconv, intl, pdo_mysql, dom, filter, gd, iconv, json, mbstring, pdo, phar, tokenizer, xml, zip
+        
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress --no-dev
+      
+    - name: Build assets
+      run: |
+        npm ci
+        npm run production
+      env:
+        NODE_ENV: production
+        
+    - name: Deploy to RumahWeb
+      uses: easingthemes/ssh-deploy@main
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+        REMOTE_USER: ${{ secrets.REMOTE_USER }}
+        TARGET: ${{ secrets.REMOTE_TARGET }}
+        SOURCE: "/"
+        EXCLUDE: "/node_modules/,/.git/,/tests/,/.github/,/.vscode/,/.env.example,/.gitignore,/.gitattributes,/.styleci.yml,/phpunit.xml,/webpack.mix.js,/package.json,/package-lock.json,/README.md,/README_DASHBOARD.md,/DASHBOARD_MODERN_README.md,/PANDUAN_HOSTING_RUMAHWEB.md,/CHECKLIST_HOSTING_RUMAHWEB.md,/RINGKASAN_HOSTING.md,/config-hosting.env"
+        
+    - name: Post-deployment setup
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.REMOTE_HOST }}
+        username: ${{ secrets.REMOTE_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          cd ${{ secrets.REMOTE_TARGET }}
+          
+          # Set permissions
+          chmod -R 755 storage/
+          chmod -R 755 bootstrap/cache/
+          chmod 644 .env
+          
+          # Clear caches
+          php artisan config:clear
+          php artisan cache:clear
+          php artisan view:clear
+          php artisan route:clear
+          
+          echo "✅ Deployment completed successfully!"
