@@ -50,6 +50,7 @@ jobs:
         rm -f RINGKASAN_GITHUB_RUMAHWEB.md
         rm -f KREDENSIAL_LOGIN_DEFAULT.md
         rm -f PANDUAN_DEPLOYMENT_TANPA_SSH.md
+        rm -f PANDUAN_GITHUB_SECRETS.md
         
     - name: Deploy to RumahWeb via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -87,6 +88,7 @@ jobs:
           **/RINGKASAN_GITHUB_RUMAHWEB.md
           **/KREDENSIAL_LOGIN_DEFAULT.md
           **/PANDUAN_DEPLOYMENT_TANPA_SSH.md
+          **/PANDUAN_GITHUB_SECRETS.md
           
     - name: Post-deployment instructions
       run: |
