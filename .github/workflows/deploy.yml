@@ -7,6 +7,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 120  # Tambah timeout 2 jam
     
     steps:
     - name: Checkout code
@@ -60,9 +61,11 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
         server-dir: /public_html/
+        timeout: 300000  # 5 menit timeout per file
+        dangerous-clean-slate: false  # Jangan hapus file yang sudah ada
         exclude: |
           **/.git*
-          **/.git*/**
+          **/.git*/
           **/node_modules/**
           **/tests/**
           **/.github/**
