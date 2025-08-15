@@ -1,0 +1,111 @@
+name: Deploy to RumahWeb (FTP Only)
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'
+        extensions: mbstring, xml, ctype, iconv, intl, pdo_mysql, dom, filter, gd, iconv, json, mbstring, pdo, phar, tokenizer, xml, zip
+        
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress --no-dev
+      
+    - name: Build assets
+      run: |
+        npm ci
+        npm run production
+      env:
+        NODE_ENV: production
+        
+    - name: Create deployment package
+      run: |
+        # Exclude unnecessary files
+        rm -rf .git
+        rm -rf node_modules
+        rm -rf tests
+        rm -rf .github
+        rm -rf .vscode
+        rm -f .env.example
+        rm -f .gitignore
+        rm -f .gitattributes
+        rm -f .styleci.yml
+        rm -f phpunit.xml
+        rm -f webpack.mix.js
+        rm -f package.json
+        rm -f package-lock.json
+        rm -f README.md
+        rm -f README_DASHBOARD.md
+        rm -f DASHBOARD_MODERN_README.md
+        rm -f PANDUAN_HOSTING_RUMAHWEB.md
+        rm -f CHECKLIST_HOSTING_RUMAHWEB.md
+        rm -f RINGKASAN_HOSTING.md
+        rm -f config-hosting.env
+        rm -f setup-github-rumahweb.sh
+        rm -f setup-github-rumahweb.ps1
+        rm -f PANDUAN_GITHUB_RUMAHWEB.md
+        rm -f RINGKASAN_GITHUB_RUMAHWEB.md
+        rm -f KREDENSIAL_LOGIN_DEFAULT.md
+        
+        # Create deployment package
+        zip -r deployment-package.zip . -x "*.git*" "node_modules/*" "tests/*" ".github/*" ".vscode/*"
+        
+    - name: Deploy to RumahWeb via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./
+        server-dir: /public_html/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/tests/**
+          **/.github/**
+          **/.vscode/**
+          **/.env.example
+          **/.gitignore
+          **/.gitattributes
+          **/.styleci.yml
+          **/phpunit.xml
+          **/webpack.mix.js
+          **/package.json
+          **/package-lock.json
+          **/README.md
+          **/README_DASHBOARD.md
+          **/DASHBOARD_MODERN_README.md
+          **/PANDUAN_HOSTING_RUMAHWEB.md
+          **/CHECKLIST_HOSTING_RUMAHWEB.md
+          **/RINGKASAN_HOSTING.md
+          **/config-hosting.env
+          **/setup-github-rumahweb.sh
+          **/setup-github-rumahweb.ps1
+          **/PANDUAN_GITHUB_RUMAHWEB.md
+          **/RINGKASAN_GITHUB_RUMAHWEB.md
+          **/KREDENSIAL_LOGIN_DEFAULT.md
+          
+    - name: Post-deployment instructions
+      run: |
+        echo "✅ Deployment completed via FTP!"
+        echo ""
+        echo "📋 Manual steps required on server:"
+        echo "1. Set permissions: chmod -R 755 storage/ bootstrap/cache/"
+        echo "2. Create .env file with database configuration"
+        echo "3. Generate app key: php artisan key:generate"
+        echo "4. Run migrations: php artisan migrate:fresh --seed --force"
+        echo "5. Clear caches: php artisan config:clear cache:clear"
+        echo ""
+        echo "🔗 Website URL: https://inventaris-min3.my.id"
+        echo "🔐 Login: admin@mail.com / secret"
